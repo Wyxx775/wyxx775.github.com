@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite dev --port 3000",
     "build": "vite build",
-    "postbuild": "touch dist/.nojekyll",
+    "postbuild": "touch docs/.nojekyll && if [ -d \"docs/client\" ]; then mv docs/client/* docs/ && rm -rf docs/client; fi",
     "preview": "vite preview"
   },
   "dependencies": {
