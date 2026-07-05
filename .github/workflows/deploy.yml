@@ -33,6 +33,19 @@ jobs:
       - name: Build
         run: npm run build
       
+      - name: List build output (debug)
+        run: ls -la dist/
+      
+      - name: Move client files to root
+        run: |
+          if [ -d "dist/client" ]; then
+            mv dist/client/* dist/
+            rm -rf dist/client
+          fi
+      
+      - name: Create .nojekyll
+        run: touch dist/.nojekyll
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
