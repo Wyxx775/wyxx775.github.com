@@ -117,7 +117,7 @@ function Hero() {
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="/images/prefecture-hero.jpg"
+          src="/wyxx775/images/prefecture-hero.jpg"
           alt="Façade de l'hôtel de préfecture des Bouches-du-Rhône à Marseille"
           className="w-full h-full object-cover"
         />
@@ -290,7 +290,7 @@ function AboutSection() {
         <div className="relative">
           <div className="border-4 border-[#f6f6f6] shadow-[0_0_0_1px_#dddddd]">
             <img
-              src="/images/prefecture-facade.jpg"
+              src="/wyxx775/images/prefecture-facade.jpg"
               alt="Façade historique de l'hôtel de préfecture des Bouches-du-Rhône"
               className="w-full h-72 md:h-96 object-cover"
             />
