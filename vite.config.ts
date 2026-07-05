@@ -3,7 +3,6 @@ import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import viteReact from '@vitejs/plugin-react'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
-// On enlève netlify pour GitHub Pages
 
 const config = defineConfig({
   plugins: [
@@ -12,17 +11,21 @@ const config = defineConfig({
     }),
     tailwindcss(),
     tanstackStart({
-      // Mode static pour GitHub Pages
       server: {
         preset: 'static',
       },
     }),
     viteReact(),
   ],
-  base: '/wyxx775/', // Important pour GitHub Pages
+  base: '/wyxx775/',
   build: {
     outDir: 'dist',
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
   },
 })
 
