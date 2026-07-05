@@ -9,6 +9,7 @@ export const getRouter = () => {
     routeTree,
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
+    basepath: '/wyxx775/', // ← AJOUT POUR GITHUB PAGES
   })
 
   return router
