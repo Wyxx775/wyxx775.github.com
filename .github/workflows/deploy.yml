@@ -33,15 +33,22 @@ jobs:
       - name: Build
         run: npm run build
       
-      - name: List build output (debug)
-        run: ls -la dist/
+      - name: Debug - List all files
+        run: |
+          echo "=== Contenu de dist/ ==="
+          ls -la dist/
+          echo "=== Contenu de dist/client/ (si existe) ==="
+          if [ -d "dist/client" ]; then ls -la dist/client/; fi
       
-      - name: Move client files to root
+      - name: Move files from client to root
         run: |
           if [ -d "dist/client" ]; then
+            echo "Déplacement des fichiers de dist/client vers dist/"
             mv dist/client/* dist/
             rm -rf dist/client
           fi
+          echo "=== Contenu final de dist/ ==="
+          ls -la dist/
       
       - name: Create .nojekyll
         run: touch dist/.nojekyll
