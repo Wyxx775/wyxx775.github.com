@@ -19,7 +19,7 @@ const config = defineConfig({
   ],
   base: '/wyxx775/',
   build: {
-    outDir: 'dist',
+    outDir: 'docs', // ← Change en docs
     emptyOutDir: true,
     rollupOptions: {
       output: {
